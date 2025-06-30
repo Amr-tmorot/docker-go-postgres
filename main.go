@@ -23,7 +23,7 @@ func main() {
 	password := os.Getenv("DB_PASSWORD")
 	dbname := os.Getenv("DB_NAME")
 
-	connStr := "host=%s port=%d user=%s password=%s dbname=%s sslmode=disable, host, port, user, password, dbname"
+	connStr := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 	
 	db, err := sqlx.Open("postgres", connStr)
 
